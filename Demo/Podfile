@@ -1,0 +1,36 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'SwiftDemo' do
+
+#约束
+pod 'SnapKit'
+
+#异步下载图片
+pod 'Kingfisher'
+
+#网络请求
+pod 'Alamofire'
+
+#下拉刷新
+pod 'MJRefresh'
+
+#进度
+pod 'SVProgressHUD'
+
+#model <-> json
+pod 'ObjectMapper'
+
+#响应式编程
+pod 'RxSwift'
+pod 'RxCocoa'
+
+
+pod 'Moya/RxSwift'
+
+#json 解析
+pod 'SwiftyJSON'
+
+end
