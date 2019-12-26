@@ -103,16 +103,16 @@ class HomeViewModel: NSObject {
         refreshStateObserable.asObservable().subscribe(onNext: { (state) in
             switch state{
             case .beginHeaderRefresh:
-                self.tableV.mj_header.beginRefreshing()
+                self.tableV.mj_header?.beginRefreshing()
             case .endHeaderRefresh:
-                self.tableV.mj_header.endRefreshing()
-                self.tableV.mj_footer.resetNoMoreData()
+                self.tableV.mj_header?.endRefreshing()
+                self.tableV.mj_footer?.resetNoMoreData()
             case .beginFooterRefresh:
-                self.tableV.mj_footer.beginRefreshing()
+                self.tableV.mj_footer?.beginRefreshing()
             case .endFooterRefresh:
-                self.tableV.mj_footer.endRefreshing()
+                self.tableV.mj_footer!.endRefreshing()
             case .noMoreData:
-                self.tableV.mj_footer.endRefreshingWithNoMoreData()
+                self.tableV.mj_footer?.endRefreshingWithNoMoreData()
             default:
                 break
             }

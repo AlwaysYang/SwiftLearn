@@ -54,20 +54,20 @@ extension UIButton {
         
         switch type {
         case .BAKit_ButtonLayoutTypeImageTop:
-            imageEdgeInsets = UIEdgeInsetsMake(-labelHeight - space/2.0, 0, 0, -labelWidth);
-            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith, -imageHeight-space/2.0, 0);
+            imageEdgeInsets = UIEdgeInsets(top: -labelHeight - space/2.0, left: 0, bottom: 0, right: -labelWidth);
+            labelEdgeInsets = UIEdgeInsets(top: 0, left: -imageWith, bottom: -imageHeight-space/2.0, right: 0);
             break;
         case .BAKit_ButtonLayoutTypeImageleft:
-            imageEdgeInsets = UIEdgeInsetsMake(0, -space/2.0, 0, space/2.0);
-            labelEdgeInsets = UIEdgeInsetsMake(0, space/2.0, 0, -space/2.0);
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: -space/2.0, bottom: 0, right: space/2.0);
+            labelEdgeInsets = UIEdgeInsets(top: 0, left: space/2.0, bottom: 0, right: -space/2.0);
             break;
         case .BAKit_ButtonLayoutTypeImageBottom:
-            imageEdgeInsets = UIEdgeInsetsMake(0, 0, -labelHeight-space/2.0, -labelWidth);
-            labelEdgeInsets = UIEdgeInsetsMake(-imageHeight-space/2.0, -imageWith, 0, 0);
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -labelHeight-space/2.0, right: -labelWidth);
+            labelEdgeInsets = UIEdgeInsets(top: -imageHeight-space/2.0, left: -imageWith, bottom: 0, right: 0);
             break;
         case .BAKit_ButtonLayoutTypeImageRight:
-            imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth+space/2.0, 0, -labelWidth-space/2.0);
-            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith-space/2.0, 0, imageWith+space/2.0);
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: labelWidth+space/2.0, bottom: 0, right: -labelWidth-space/2.0);
+            labelEdgeInsets = UIEdgeInsets(top: 0, left: -imageWith-space/2.0, bottom: 0, right: imageWith+space/2.0);
             break;
         }
         
@@ -115,12 +115,12 @@ extension UIButton {
         //        let Btn = UIButton()
         self.init()
         
-        self.setImage(UIImage(named:setImage), for: UIControlState.normal)
-        self.setImage(UIImage(named:"\(setImage)_highlighted"), for: UIControlState.highlighted)
-        self.setBackgroundImage(UIImage(named:setBackgroundImage), for: UIControlState.normal)
-        self.setBackgroundImage(UIImage(named:"\(setBackgroundImage)_highlighted"), for: UIControlState.highlighted)
+        self.setImage(UIImage(named:setImage), for: UIControl.State.normal)
+        self.setImage(UIImage(named:"\(setImage)_highlighted"), for:  UIControl.State.highlighted)
+        self.setBackgroundImage(UIImage(named:setBackgroundImage), for:  UIControl.State.normal)
+        self.setBackgroundImage(UIImage(named:"\(setBackgroundImage)_highlighted"), for:  UIControl.State.highlighted)
         
-        self.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
+        self.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         
         self.sizeToFit()
     }
@@ -139,17 +139,17 @@ extension UIButton {
         self.init()
         
         if let img = setHighlightImage {
-            self.setImage(UIImage(named:img), for: UIControlState.normal)
-            self.setImage(UIImage(named:"\(img)_highlighted"), for: UIControlState.highlighted)
+            self.setImage(UIImage(named:img), for: UIControl.State.normal)
+            self.setImage(UIImage(named:"\(img)_highlighted"), for: UIControl.State.highlighted)
         }
         
         if let tit = title {
-            self.setTitle(tit, for: UIControlState.normal)
-            self.setTitleColor(UIColor.blue, for: UIControlState.normal)
-            self.setTitleColor(LLTHEMECOLOR, for: UIControlState.highlighted)
+            self.setTitle(tit, for: UIControl.State.normal)
+            self.setTitleColor(UIColor.blue, for: UIControl.State.normal)
+            self.setTitleColor(LLTHEMECOLOR, for: UIControl.State.highlighted)
             self.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         }
-        self.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
+        self.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         
         self.sizeToFit()
         
@@ -159,12 +159,12 @@ extension UIButton {
         
         self.init()
         
-        self.setBackgroundImage(UIImage(named:BackgroundImage!), for: UIControlState.normal)
-        self.setTitle(title, for: UIControlState.normal)
-        self.setTitleColor(titleColor, for: UIControlState.normal)
+        self.setBackgroundImage(UIImage(named:BackgroundImage!), for: UIControl.State.normal)
+        self.setTitle(title, for: UIControl.State.normal)
+        self.setTitleColor(titleColor, for: UIControl.State.normal)
         
-        self.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
-        
+        self.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
+
         self.sizeToFit()
         
     }

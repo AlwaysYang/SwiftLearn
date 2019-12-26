@@ -88,7 +88,7 @@ func ba_validateWithString(BAKit_RegularType type: BAKit_RegularType, validateSt
         }
         
         let regex: NSRegularExpression = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
-        let matches = regex.matches(in: validateString, options: NSRegularExpression.MatchingOptions.reportProgress, range: NSMakeRange(0, validateString.characters.count))
+        let matches = regex.matches(in: validateString, options: NSRegularExpression.MatchingOptions.reportProgress, range: NSMakeRange(0, validateString.count))
         return matches.count > 0
     }
     catch {

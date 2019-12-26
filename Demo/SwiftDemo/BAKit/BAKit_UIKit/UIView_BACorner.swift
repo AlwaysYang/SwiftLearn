@@ -28,7 +28,7 @@ extension UIView {
         borderLayer.lineWidth = borderWidth!
         borderLayer.fillColor = UIColor.clear.cgColor
         borderLayer.strokeColor = borderColor?.cgColor
-        borderLayer.lineCap = kCALineCapSquare
+        borderLayer.lineCap = CAShapeLayerLineCap.square
 
         self.layer.mask = shapeLayer
         self.layer.addSublayer(borderLayer)

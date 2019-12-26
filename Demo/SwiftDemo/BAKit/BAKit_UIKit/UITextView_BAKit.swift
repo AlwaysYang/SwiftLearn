@@ -17,21 +17,21 @@ extension UITextView {
         attrString.append(self.attributedText)
         
         //新增的文本内容（使用默认设置的字体样式）
-        let attrs = [NSAttributedStringKey.font : self.font!]
+        let attrs = [NSAttributedString.Key.font : self.font!]
         let appendString = NSMutableAttributedString(string: string, attributes:attrs)
         
         //判断是否是链接文字
         if withURLString != "" {
             let range:NSRange = NSMakeRange(0, appendString.length)
             appendString.beginEditing()
-            appendString.addAttribute(NSAttributedStringKey.link, value:withURLString, range:range)
+            appendString.addAttribute(NSAttributedString.Key.link, value:withURLString, range:range)
 
             appendString.endEditing()
         }
         //合并新的文本
         attrString.append(appendString)
         
-        self.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue:hilightTextColor ?? UIColor.blue]
+        self.linkTextAttributes = [NSAttributedString.Key.foregroundColor:hilightTextColor ?? UIColor.blue]
 
         //设置合并后的文本
         self.attributedText = attrString

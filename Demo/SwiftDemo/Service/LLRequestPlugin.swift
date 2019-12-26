@@ -28,14 +28,14 @@ let netWorkActivityPlugin = NetworkActivityPlugin { (change,target)  in
 //    return MoyaProvider.defaultEndpointMapping(for: target)
 //}
 
-let endpointMapping = {(target: APIManager) -> Endpoint<APIManager> in
+let endpointMapping = {(target: APIManager) -> Endpoint in
     print("请求连接：\(target.baseURL)\(target.path) \n方法：\(target.method)\n参数：\(String(describing: target.task)) ")
     return MoyaProvider.defaultEndpointMapping(for: target)
 }
 
 
 //设置网络请求超时等
-let requestClosure = { (endpoint: Endpoint<APIManager>, closure: (Result<URLRequest, MoyaError>) -> Void)  -> Void in
+let requestClosure = { (endpoint: Endpoint, closure: (Result<URLRequest, MoyaError>) -> Void)  -> Void in
     do {
         var  urlRequest = try endpoint.urlRequest()
         urlRequest.timeoutInterval = 30.0
@@ -65,7 +65,7 @@ let requestClosure = { (endpoint: Endpoint<APIManager>, closure: (Result<URLRequ
                 let str =  NSString(data:response.data,encoding: String.Encoding.utf8.rawValue)
                 print("请求结果 format：\(String(describing: str))")
                 
-                let json:Dictionary? = try? JSONSerialization.jsonObject(with: response.data, options: .allowFragments) as! [String:Any]
+                let json:Dictionary? = try? (JSONSerialization.jsonObject(with: response.data, options: .allowFragments) as! [String:Any])
                 print("请求结果：\(json as Any)")
                 
 //                let jsonUserJ = try? JSON(data: response.data)

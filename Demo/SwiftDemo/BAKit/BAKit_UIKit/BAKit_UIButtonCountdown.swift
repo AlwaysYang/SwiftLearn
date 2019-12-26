@@ -40,11 +40,11 @@ open class BAKit_UIButtonCountdown: UIButton {
             self.isCounting = true
             self.delegate?.countdownButton?(countdownButton: self, didUpdatedWith: newValue)
             if newValue <= 0 {
-                self.setTitle("重新发送", for: UIControlState())
+                self.setTitle("重新发送", for: UIControl.State())
                 self.stop()
                 self.isEnabled = true
             } else {
-                self.setTitle("\(newValue) s", for: UIControlState())
+                self.setTitle("\(newValue) s", for: UIControl.State())
             }
         }
     }

@@ -36,7 +36,7 @@ public func ba_getJSONStringFromDictionary(dictionary:NSDictionary) -> String? {
         print("无法解析出JSONString")
         return ""
     }
-    let data : NSData! = try? JSONSerialization.data(withJSONObject: dictionary, options: []) as NSData!
+    let data : NSData! = try? JSONSerialization.data(withJSONObject: dictionary, options: []) as NSData?
     let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
     return JSONString! as String
     
@@ -56,10 +56,10 @@ public func ba_stringGetSizeWithMaxSizeAndFont(string:String,maxSize:CGSize,font
     }
     
     let attributes:NSDictionary = NSDictionary(object:fontSize,
-                                               forKey:NSAttributedStringKey.font as NSCopying)
+                                               forKey:NSAttributedString.Key.font as NSCopying)
     let size = string.boundingRect(with: maxSize,
                                    options: NSStringDrawingOptions.usesLineFragmentOrigin,
-                                                attributes:attributes as? [NSAttributedStringKey : AnyObject] ,
+                                                attributes:attributes as? [NSAttributedString.Key : AnyObject] ,
                                                 context: nil).size
     return size
 }
@@ -78,7 +78,7 @@ public func ba_stringGetAttributedString(allString:String, changeColorString:Str
     
     let attribStr = NSMutableAttributedString.init(string: allString)
     let range:NSRange = (allString as NSString).range(of: changeColorString)
-    attribStr.addAttribute(NSAttributedStringKey.foregroundColor, value: hilightColor, range: range)
+    attribStr.addAttribute(NSAttributedString.Key.foregroundColor, value: hilightColor, range: range)
     return attribStr
 }
 

@@ -160,7 +160,7 @@ public func BAKit_ShowAlertWithMsg(with msg:String, controller:UIViewController)
 }
 
 // MARK: - 系统分享
-public func BAKit_Share_System(with title:String?, image:UIImage?, urlString:String?, controller:UIViewController, completionWithItemHandler: @escaping UIActivityViewControllerCompletionWithItemsHandler) -> Void {
+public func BAKit_Share_System(with title:String?, image:UIImage?, urlString:String?, controller:UIViewController, completionWithItemHandler: @escaping UIActivityViewController.CompletionWithItemsHandler) -> Void {
     
     //分享的标题
     let share_Title:String = title!
@@ -173,7 +173,7 @@ public func BAKit_Share_System(with title:String?, image:UIImage?, urlString:Str
     
     let share_ActivityVC = UIActivityViewController.init(activityItems: share_ActivityItems, applicationActivities: nil)
     // 不出现在活动项目
-    share_ActivityVC.excludedActivityTypes = [UIActivityType.print, UIActivityType.copyToPasteboard, UIActivityType.addToReadingList]
+    share_ActivityVC.excludedActivityTypes = [UIActivity.ActivityType.print, UIActivity.ActivityType.copyToPasteboard, UIActivity.ActivityType.addToReadingList]
     
     controller.present(share_ActivityVC, animated: true, completion: nil)
     // 分享之后的回调

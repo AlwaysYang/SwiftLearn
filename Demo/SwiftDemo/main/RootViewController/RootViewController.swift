@@ -63,7 +63,7 @@ class RootViewController: UITabBarController {
         childController.tabBarItem.image = UIImage(named: normalImage)
         // 包装导航控制器
         let nav = BaseNavigationViewController(rootViewController: childController)
-        self.addChildViewController(nav)
+        self.addChild(nav);
     }
 
     override func didReceiveMemoryWarning() {

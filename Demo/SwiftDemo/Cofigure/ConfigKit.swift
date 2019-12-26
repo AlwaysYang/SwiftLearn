@@ -21,7 +21,7 @@ class ConfigKit: NSObject {
         //导航栏颜色
         UINavigationBar.appearance().barTintColor = UIColor.white
         //导航栏字体
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 19), NSAttributedStringKey.foregroundColor: MAINTHEMECOLOR]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 19), NSAttributedString.Key.foregroundColor: MAINTHEMECOLOR]
         //导航栏按钮颜色
         UINavigationBar.appearance().tintColor = MAINTHEMECOLOR
         UIApplication.shared.setStatusBarHidden(true, with: .none)

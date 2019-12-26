@@ -21,7 +21,7 @@ pod 'MJRefresh'
 pod 'SVProgressHUD'
 
 #model <-> json
-pod 'ObjectMapper'
+pod 'ObjectMapper', '3.5.1'
 
 #响应式编程
 pod 'RxSwift'

@@ -33,7 +33,7 @@ class RequestDataViewController: BaseViewController_BAKit {
 
     
     func setupUI (){
-        tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: LLSCREENW, height: LLSCREENH - CGFloat(NAVMargin)), style: UITableViewStyle.plain)
+        tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: LLSCREENW, height: LLSCREENH - CGFloat(NAVMargin)), style: UITableView.Style.plain)
         
         tableView.register(UINib.init(nibName: "LLHomeCell", bundle: nil), forCellReuseIdentifier: cellID)
         
@@ -42,7 +42,7 @@ class RequestDataViewController: BaseViewController_BAKit {
         tableView.tableFooterView = UIView.init()
         
         if #available(iOS 11.0, *) {
-            tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior(rawValue: 2)!
+            tableView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior(rawValue: 2)!
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         };
@@ -63,7 +63,7 @@ class RequestDataViewController: BaseViewController_BAKit {
             weakself?.viewModel.requestNewDataCommond.onNext(false)
         })
         
-        tableView.mj_header.beginRefreshing()
+        tableView.mj_header!.beginRefreshing()
     }
     
     func tableViewAction(){

@@ -1,47 +1,61 @@
 PODS:
-  - Alamofire (4.6.0)
-  - Kingfisher (4.5.0)
-  - MJRefresh (3.1.15.1)
-  - Moya/Core (10.0.1):
+  - Alamofire (4.9.1)
+  - Kingfisher (4.10.1)
+  - MJRefresh (3.3.1)
+  - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - Moya/RxSwift (10.0.1):
+    - Result (~> 4.1)
+  - Moya/RxSwift (13.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - ObjectMapper (3.1.0)
-  - Result (3.2.4)
-  - RxCocoa (4.0.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.0.0)
-  - SnapKit (4.0.0)
-  - SVProgressHUD (2.2.2)
-  - SwiftyJSON (4.0.0)
+  - ObjectMapper (3.5.1)
+  - Result (4.1.0)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SnapKit (4.2.0)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
   - MJRefresh
   - Moya/RxSwift
-  - ObjectMapper
+  - ObjectMapper (= 3.5.1)
   - RxCocoa
   - RxSwift
   - SnapKit
   - SVProgressHUD
   - SwiftyJSON
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Kingfisher
+    - MJRefresh
+    - Moya
+    - ObjectMapper
+    - Result
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+    - SVProgressHUD
+    - SwiftyJSON
+
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  Kingfisher: 26ae0473102b77b575da51960c932431e3745407
-  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
-  Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
-  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 018c2da5b7320813ee7ffa65d79a867854165c60
+PODFILE CHECKSUM: b35a12a57d429bd363e153a24144be2a587aabe0
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.9.0.beta.2
